@@ -1,0 +1,52 @@
+.polka-bg {
+    background-color: var(--bs-body-bg);
+    background-image: radial-gradient(var(--bs-tertiary-color) 0.9px, var(--bs-body-bg) 0.9px);
+    background-size: 12px 12px;
+}
+
+.w-md-75 {
+    width: 75% !important;
+}
+
+.nav {
+    border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.card-wrapper {
+    min-width: 15rem !important;
+}
+
+.card-img-top {
+    height: 10rem;
+}
+
+@media (max-width: 576px) {
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav {
+        margin-top: 0.5rem;
+        padding: 1rem !important;
+    }
+
+    .custom-toggler {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .w-md-75 {
+        width: 100% !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .shadow-sm {
+        box-shadow: 0 0.125rem 0.25rem rgba(200, 200, 200, 0.07) !important;
+    }
+}

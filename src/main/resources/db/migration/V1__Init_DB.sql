@@ -14,9 +14,9 @@ CREATE TABLE toy
     material    VARCHAR(255)   NOT NULL,
     price       DECIMAL(10, 2) NOT NULL,
     photo       VARCHAR(255),
-    category_id INT            NOT NULL,
+    category_id INT,
 
-    CONSTRAINT FK_TOY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES toy_category (category_id)
+    CONSTRAINT FK_TOY_ON_CATEGORY FOREIGN KEY (category_id) REFERENCES toy_category (category_id) ON DELETE SET NULL
 );
 
 INSERT INTO toy_category (category_name)

@@ -38,7 +38,7 @@ public class ToyService {
   }
 
   public Toy findById(final Integer id) {
-    return toyRepository.findById(id).orElse(null);
+    return toyRepository.findById(id).orElseGet(Toy::new);
   }
 
   @Transactional
@@ -69,6 +69,7 @@ public class ToyService {
     return toyRepository.save(updatedToy);
   }
 
+  @Transactional
   public void deleteToy(final Integer toyId) {
     toyRepository.deleteById(toyId);
   }
@@ -84,7 +85,7 @@ public class ToyService {
     String fileName = UUID.randomUUID() + "_" + photo.getOriginalFilename();
     final File resultFile = new File(uploadDir.getAbsolutePath() + File.separator + fileName);
 
-    log.info("Image uploaded {}", resultFile.getAbsolutePath());
+    log.info("Image uploaded: {}", resultFile.getAbsolutePath());
 
     photo.transferTo(resultFile);
 

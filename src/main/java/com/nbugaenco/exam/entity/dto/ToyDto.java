@@ -7,9 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Value;
 
-/**
- * DTO for {@link com.nbugaenco.exam.entity.Toy}
- */
 @Value
 public class ToyDto implements Serializable {
 

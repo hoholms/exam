@@ -14,9 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.nbugaenco.exam.entity.Toy;
-import com.nbugaenco.exam.entity.dto.ToyDto;
 import com.nbugaenco.exam.mapper.ToyMapper;
+import com.nbugaenco.exam.model.dto.SearchToyDto;
+import com.nbugaenco.exam.model.dto.ToyDto;
+import com.nbugaenco.exam.model.entity.Toy;
+import com.nbugaenco.exam.model.specification.ToySearchSpecification;
 import com.nbugaenco.exam.repository.ToyRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -33,8 +35,8 @@ public class ToyService {
   @Value("${upload.path}")
   private String uploadPath;
 
-  public Page<Toy> searchToys(final Pageable pageable) {
-    return toyRepository.findAll(pageable);
+  public Page<Toy> searchToys(final SearchToyDto searchToyDto, final Pageable pageable) {
+    return toyRepository.findAll(ToySearchSpecification.getSpecification(searchToyDto), pageable);
   }
 
   public Toy findById(final Integer id) {

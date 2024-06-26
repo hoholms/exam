@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.nbugaenco.exam.entity.ToyCategory;
+import com.nbugaenco.exam.model.entity.ToyCategory;
 import com.nbugaenco.exam.repository.ToyCategoryRepository;
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.nbugaenco.exam.entity.dto;
+package com.nbugaenco.exam.model.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

@@ -27,7 +27,7 @@
         <div class="nav-wrapper">
             <#include "navbar.ftlh">
         </div>
-        <div class="w-md-75 ms-sm-6 py-4 px-3 px-md-5 mt-3 border rounded-5 shadow-sm mx-md-auto">
+        <div class="w-md-75 ms-sm-6 py-4 px-3 px-md-5 mt-3 overflow-auto border rounded-5 shadow-sm mx-md-auto">
             <#nested>
         </div>
     </div>

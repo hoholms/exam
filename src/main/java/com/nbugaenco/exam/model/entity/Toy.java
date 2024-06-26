@@ -1,4 +1,4 @@
-package com.nbugaenco.exam.entity;
+package com.nbugaenco.exam.model.entity;
 
 import java.math.BigDecimal;
 

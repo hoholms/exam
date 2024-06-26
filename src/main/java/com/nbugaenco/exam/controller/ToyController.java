@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.nbugaenco.exam.entity.Toy;
-import com.nbugaenco.exam.entity.dto.ToyDto;
+import com.nbugaenco.exam.model.dto.SearchToyDto;
+import com.nbugaenco.exam.model.dto.ToyDto;
+import com.nbugaenco.exam.model.entity.Toy;
 import com.nbugaenco.exam.service.ToyCategoryService;
 import com.nbugaenco.exam.service.ToyService;
 import lombok.RequiredArgsConstructor;
@@ -31,10 +32,12 @@ public class ToyController {
   }
 
   @GetMapping("toy/search")
-  public String search(final Model model,
+  public String search(final Model model, final @ModelAttribute SearchToyDto searchToyDto,
       final @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
 
-    model.addAttribute("toys", toyService.searchToys(pageable));
+    model.addAttribute("toys", toyService.searchToys(searchToyDto, pageable));
+    model.addAttribute("categories", toyCategoryService.findAll());
+    model.addAttribute("searchToyDto", searchToyDto);
 
     return "searchToy";
   }

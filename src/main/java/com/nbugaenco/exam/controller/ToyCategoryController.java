@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.nbugaenco.exam.entity.ToyCategory;
+import com.nbugaenco.exam.model.entity.ToyCategory;
 import com.nbugaenco.exam.service.ToyCategoryService;
 import lombok.RequiredArgsConstructor;
 

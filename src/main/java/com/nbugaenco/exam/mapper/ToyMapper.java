@@ -2,8 +2,8 @@ package com.nbugaenco.exam.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.nbugaenco.exam.entity.Toy;
-import com.nbugaenco.exam.entity.dto.ToyDto;
+import com.nbugaenco.exam.model.dto.ToyDto;
+import com.nbugaenco.exam.model.entity.Toy;
 import com.nbugaenco.exam.repository.ToyCategoryRepository;
 import lombok.RequiredArgsConstructor;
 
